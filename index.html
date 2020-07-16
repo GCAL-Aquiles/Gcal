@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="PT-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href=""/>
+    <link rel="stylesheet" href="GCAL.css">
+    <link rel="stylesheet" href="">
+    <link rel="icon" type="image/jpg" href="https://i.pinimg.com/originals/9c/cc/0c/9ccc0c23676c7d9c38fa0b751027694e.jpg"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title> GCAL </title>
+  </head>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+display: none;
+}
+
+body{
+  background: #111;
+}
+
+/* Primeira folha*/
+
+section{
+  position: relative;
+  padding: 100px;
+}
+
+.A1{
+  color: yellow;
+}
+.A2{
+  color: green;
+}
+.A3{
+  color: red;
+}
+
+/*Section 1*/
+
+.header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000000;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header .logo{
+  color: black;
+  text-decoration: none;
+  font-size: 1.2em;
+  display: relative;
+  margin-left: -5%;
+}
+
+.header .toggle img{
+  max-width: 40px;
+  cursor: pointer;
+}
+
+/*section2*/
+
+.banner{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner::before  {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  z-index: 1;
+  background: linear-gradient(to top, #111, transparent);
+}
+
+.banner .content{
+  position: relative;
+  max-width: 900px;
+  text-align: center;
+  z-index: 1;
+}
+
+.banner .content h2{
+  color: #fff;
+  font-size: 4em;
+  top: 1px;
+}
+
+.banner .content p{
+  color: #fff;
+  font-size: 1em;
+}
+
+.btn{
+  position: relative;
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 30px;
+  background: #fff;
+  color: #333;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.btn:hover{
+  background: #d3d3d3;
+
+}
+
+.fitBg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+/* section 3*/
+
+.Sobre{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.a{
+  color: yellow;
+}
+.b{
+  color: #00FF00;
+}
+.c{
+  color: red;
+}
+
+.Sobre .contentBx{
+  min-width: 50%;
+  width: 50%;
+  text-align: end;
+  padding-right: 40px;
+}
+
+.titleText{
+  font-weight: 600;
+  color: #fff;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.text{
+  color: #fff;
+  font-size: 1em;
+}
+
+.Sobre .imgBx{
+  position: relative;
+  min-width: 50%;
+  width: 50%;
+  min-height: 500px;
+}
+
+/*slideshow*/
+
+.galeria{
+  margin: 200px auto;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.foto{
+  position: absolute;
+  opacity: 0;
+  animation-name: anime;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes anime{
+  25%{
+    opacity: 1;
+    transform: scale(1.1,1.1);
+  }
+  50%{
+    opacity: 0;
+  }
+}
+
+.foto:nth-child(1){
+
+}
+
+.foto:nth-child(2){
+  animation-delay: 5s;
+}
+
+.foto:nth-child(3){
+  animation-delay: 10s;
+}
+
+.foto:nth-child(4){
+ animation-delay: 15s;
+}
+
+.foto:nth-child(5){
+ animation-delay: 20s;
+}
+
+.foto:nth-child(6){
+ animation-delay: 25s;
+}
+
+.foto:nth-child(7){
+ animation-delay: 30s;
+}
+
+.foto:nth-child(8){
+ animation-delay: 35s;
+}
+
+.foto:nth-child(9){
+ animation-delay: 40s;
+}
+
+/*section extra*/
+
+.list{
+  position: relative;
+}
+
+.list ul{
+  position: relative;
+}
+
+.list ul li {
+  position: relative;
+  left: 0;
+  color: #999;
+  list-style: none;
+  margin: 4px;
+  border-left: 2px solid #24ff0b;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.list ul li:before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #24ff0b;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.5s;
+}
+
+.list ul li:hover:before{
+  transform: scaleX(1);
+}
+
+.list ul li:hover{
+  left: 10px;
+}
+
+.list ul li span{
+  position: relative;
+  padding: 8px;
+  display: inline-block;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.list ul li:hover span{
+  color: #111;
+}
+
+/*section 4*/
+.banner2,
+.banner3
+{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner2::before,
+.banner3::before
+{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  z-index: 1;
+  background: linear-gradient(to top, #111, transparent);
+}
+
+.banner2::after,
+.banner3::after
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  z-index: 1;
+  background: linear-gradient(to bottom, #111, transparent);
+}
+
+/*section 4*/
+
+.destination{
+  text-align: center;
+}
+
+.destination .conetnt{
+  text-align: center;
+}
+
+.destination .destinationList{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.destination .destinationList .box{
+  position: relative;
+  min-width: 350px;
+  height: 480px;
+  background: #191919;
+  transition: 0.5;
+  margin:10px;
+}
+
+.destination .destinationList:hover .box{
+  opacity: 0.2;
+}
+
+.destination .destinationList .box:hover{
+  opacity: 1.6;
+}
+
+
+.destination .destinationList .box .imgBx{
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.destination .destinationList .box .content{
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.destination .destinationList .box .content h2{
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.2em;
+}
+
+.destination .destinationList .box .content h2 span{
+  font-size: 0.8em;
+  font-weight: 300;
+  opacity: 0.5;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer .sci{
+  position: relative;
+  display: flex;
+}
+
+.footer .sci li{
+  list-style: none;
+}
+
+.footer .sci li a{
+  text-decoration: none;
+  margin: 0 20px;
+}
+
+.footer .sci li a img {
+  filter: invert(1);
+  max-width: 40px;
+}
+
+.copyrightText{
+  margin-top: 20px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  color: #666;
+  text-align: center;
+}
+
+.copyrightText a{
+  color: #fff;
+  text-decoration: none;
+}
+
+
+@media (max-width: 767px) {
+  section{
+    padding: 40px;
+  }
+  .banner .content h2{
+    font-size: 2.5em;
+  }
+  .banner .content p{
+    font-size: 1em;
+  }
+  .Sobre{
+    flex-direction: column;
+  }
+  .Sobre .contentBx,
+  .Sobre .imgBx {
+    min-width: 100%;
+    width: 100%;
+    text-align: center;
+    padding-right: 0px;
+  }
+  .Sobre .imgBx {
+    min-height: 120px;
+  }
+  .btn{
+    margin-bottom: 30px
+  }
+  .destination .destinationList .box{
+    position: relative;
+    max-width: 350px;
+    min-width: initial;
+    width: 350px;
+    height: 400px;
+  }
+  .destination .destinationList .box .imgBx{
+    height: 320px;
+  }
+
+  .footer .sci li a img{
+    filter: invert(1);
+    max-width: 30px;
+  }
+
+  .a{
+    color: yellow;
+  }
+  .b{
+    color: #00FF00;
+  }
+  .c{
+    color: red;
+  }
+}
+
+.banner4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.org{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: animate 45s linear infinite;
+}
+
+@keyframes animate {
+  0%{
+    transform: perspective(10000px) rotateY(0deg);
+  }
+  100%{
+    transform: perspective(10000px) rotateY(360deg);
+  }
+}
+
+.org span{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+  -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0006);
+}
+
+.box span img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.txorg{
+  margin-left: 2px;
+  color: #fff;
+  font-size: 1em;
+  text-align: center;
+  justify-content: center;
+}
+
+.txt{
+  color:#fff;
+}
+
+.ft{
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.rml{
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin: 0;
+  box-shadow: 0 2px 2px 0 rgb(54,54,54);
+}
+</style>
+
+  <body>
+<section class="header">
+  <a href="#" class="logo"><h2>G<span class="A1">C</span><span class="A2">A</span><span class="A3">L</span></h2></a>
+  <div class="toggle"> <img src="toggle.png"></div>
+</section>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<section class="banner">
+  <img src="https://i.pinimg.com/originals/13/ee/af/13eeafe04fdb5b45a031ba0f3153ebde.jpg" class="fitBg">
+  <div class="content">
+    <h2>Gincana Cultural de Aquiles Lisboa</h2><br><br><br><br><br>
+    <p>A GCAL surgiu da vontade de alguns filhos da localidade de Aquiles Lisboa, com o desejo de apresentar algo que proporcionasse diversão e socialização de saberes a todos que ali se encontravam no período das férias do mês de julho. Visando atender a juventude da comunidade com o objetivo de promover união, entretenimento, companheirismo e espírito esportivo. Oferecendo desafios, com variadas provas divididas em três dias de competição e manifestações artísticas, com apresentações de dança, música, exposição de fotos, palestras, show de talentos, promovendo assim um ambiente de integração e aprendizagem.</p>
+
+    <a href="GCAL_18.html" target="_blank" class="btn"> <b>Histórico 2018</b></a> &nbsp; &nbsp; &nbsp;<a href="GCAL_19.html" target="_blank" class="btn"> <b>Histórico 2019</b></a>
+</section>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<section class="destination">
+  <div class="conetnt">
+    <h2 class="titleText"> Cards da G<span class="A1">C</span><span class="A2">A</span><span class="A3">L</span></h2>
+  </div>
+  <div class="destinationList">
+    <div class="box">
+      <div class="imgBx">
+        <img src="https://i.pinimg.com/originals/3d/15/b3/3d15b34734c92bdd86757301ff9ba93e.jpg" class="fitBg">
+      </div>
+        <div class="content">
+          <h2>Card 2018<br><span class="a"><b>Resgate Histórico de Aquiles Lisboa</b></span></h2>
+        </div>
+    </div>
+    <div class="box">
+      <div class="imgBx">
+        <img src="https://i.pinimg.com/originals/22/bb/ba/22bbba6e29ace1285072fd4276581e92.jpg" class="fitBg">
+      </div>
+        <div class="content">
+          <h2>Card 2019<br><span class="b"><b>Tolerância, Respeito e Saúde</b>.</span></h2>
+        </div>
+    </div>
+
+    <div class="box">
+      <div class="imgBx">
+        <img src="https://i.pinimg.com/originals/13/75/ea/1375eaa020025afcb720398b1e98b6e6.jpg" class="fitBg">
+      </div>
+        <div class="content">
+          <h2>Card 2020<br><span class="c"><b>Os Jovens no Cenário Político</b></span></h2>
+        </div>
+    </div>
+  </div>
+  <a href="#" class="btn"> <b>Veja Mais</b></a>
+</section>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<section class="Sobre">
+  <div class="contentBx">
+  <h2 class="titleText"> Linha do tempo da G<span class="A1">C</span><span class="A2">A</span><span class="A3">L</span></h2>
+  <p class="text">A Gincana Cultural em sua I edição no ano de 2018 realizou um Resgate Histórico de Aquiles Lisboa, como curiosidade a comunidade teve dois nomes anteriores ao atual. O primeiro foi cunhado como Ponta de Tucunzal devido a vários pés de tucum. Em seguida, o local foi comprado pela família Almeida, depois foi chamada de Ponta dos Almeidas. E por fim, foi denominado Aquiles Lisboa em homenagem ao médico Dr. Aquiles.  No ano de 2019, na sua II edição apresentou-se com a proposta de debater e discutir com os jovens a questão social, com temas de suma importância relacionados à tolerância, o respeito e saúde.</p>
+  <a href="#" class="btn"><b>Veja Mais</b></a>
+  </div>
+  <section class="galeria imgBx">
+    <img src="https://i.pinimg.com/originals/20/c1/1a/20c11acbf444fce5763226a565c1a1c5.jpg" class="foto fitBg">
+    <img src="https://i.pinimg.com/originals/d4/29/91/d42991ad4f05302b6901b56b01ce9fdd.jpg" class="foto fitBg">
+    <img src="https://i.pinimg.com/originals/d3/38/4b/d3384bc11611d706acfbca9639901183.jpg" class="foto fitBg">
+    <img src="https://i.pinimg.com/originals/19/2c/9f/192c9ff9fd82c7e903f20e2cd8143916.jpg" class="foto fitBg">
+    <img src="https://i.pinimg.com/originals/ad/d4/78/add478138c4e1570ed8fa483eca3e11b.jpg" class="foto fitBg">
+    <img src="https://i.pinimg.com/originals/4e/35/c2/4e35c2cc6bbda337d550bdc28cfa4811.jpg" class="foto fitBg">
+    <img src="https://i.pinimg.com/originals/bd/d1/72/bdd172fc5c58024bdda25e0fddff03b1.jpg" class="foto fitBg">
+    <img src="https://i.pinimg.com/originals/00/17/4e/00174eccebe1af51440fb85fd8104e53.jpg" class="foto fitBg">
+    <img src="https://i.pinimg.com/originals/66/de/e4/66dee47546c86d8cf4c0537417fe7038.jpg" class="foto fitBg">
+  </section>
+</section>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<section class="banner2">
+  <img src="https://i.pinimg.com/originals/0c/a9/79/0ca979c83893e06d7a738bdcd8465add.jpg" class="fitBg">
+</section>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<section class="Sobre">
+  <div class="list">
+  <h2 class="titleText"> Programação da G<span class="A1">C</span><span class="A2">A</span><span class="A3">L</span></h2> <br> <br> <br>
+  <ul>
+    <li><span> <b> Dia 10 a 23 de Julho</b><br>Divulgação da Gincana nas Redes Sociais</span></li>
+    <li><span> <b> Dia 24 de Julho</b><br> Identificação das Equipes (08:00 - 23:30h)<br>Jogo Eletrônico (15:30 - 16:30h)</span></li>
+    <li><span> <b> Dia 25 de Julho</b><br> Tik Tok (08:00 - 23:30h)</span></li>
+    <li><span> <b>Dia 26 de Julho</b><br> Check (08:00 - 19:00h) <br> Fotgrafia (08:00 - 19:00h)</span></li>
+    <li><span> <b>Dia 26 de Julho</b> <br>Show de Talentos (19:00h)</span></li>
+    <li><span> <b>Encerramento</b> </span></li>
+  </ul> <br> <br>
+  <a href="Documentos\3ª GINCANA CULTURAL DE AQUILES LISBOA 2020.pdf" download="Acme Documentation (ver. 2.0.1).pdf" target="_blank" class="btn"> <b>Faça o download da Programação<b></a>
+  </div>
+</section>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<section class="destination">
+  <div class="conetnt">
+    <h2 class="titleText"> Campeões Históricos da G<span class="A1">C</span><span class="A2">A</span><span class="A3">L</span></h2>
+  </div>
+  <div class="destinationList">
+    <div class="box">
+      <div class="imgBx">
+        <img src="https://i.pinimg.com/originals/ee/68/f6/ee68f6e565852e9869143558b3807a71.jpg" class="fitBg">
+      </div>
+        <div class="content">
+          <h2>Campeões 2018<br><span class="a"><b> Os Canoas</b></span></h2>
+        </div>
+    </div>
+    <div class="box">
+      <div class="imgBx">
+        <img src="https://i.pinimg.com/originals/a8/a5/a7/a8a5a77f2914733a0110ebfb4389dea6.jpg" class="fitBg">
+      </div>
+        <div class="content">
+          <h2>Campeões 2019<br><span class="b"><b> Os Pandas</b></span></h2>
+        </div>
+    </div>
+
+    <div class="box">
+      <div class="imgBx">
+        <img src="https://i.pinimg.com/originals/5c/53/73/5c5373e170e4c26797b369c8a4575cdd.png" class="fitBg">
+      </div>
+        <div class="content">
+          <h2>Campeões 2020<br><span class="c">...</span></h2>
+        </div>
+    </div>
+  </div>
+  <a href="#" class="btn"><b>Veja Mais</b></a>
+</section>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<section class="banner3">
+  <img src="https://i.pinimg.com/originals/ea/78/4d/ea784da1c8fbe3990878abfe2f123ffc.jpg" class="fitBg">
+</section>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxx  organização gcal xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<br><br><center><h2 class="titleText"> Organização da G<span class="A1">C</span><span class="A2">A</span><span class="A3">L</span></h2></center>
+<section class="banner4">
+<div class="org">
+  <span style="--i:1"><img src="https://i.pinimg.com/originals/02/6c/50/026c5030a5b4336dc1b25338ff0a2817.jpg" width="280px" height="280px"><h2 class="txorg">Leilane Fonseca</h2></span>
+  <span style="--i:2"><img src="https://i.pinimg.com/originals/f7/01/a3/f701a3a563d544ccdbe578cb711e1e20.jpg" width="280px" height="280px"><h2 class="txorg">Bruna Moreira</h2></span>
+  <span style="--i:3"><img src="https://i.pinimg.com/originals/90/2d/08/902d08b054bb34bbd0ee503c7fd7c5f8.jpg" width="280px" height="280px"><h2 class="txorg">Daniele Moreira</h2></span>
+  <span style="--i:4"><img src="https://i.pinimg.com/originals/30/a6/30/30a6301c56d8b3acd89a1fbb82219fe7.jpg" width="280px" height="280px"><h2 class="txorg">Nayna Moreira</h2></span>
+  <span style="--i:5"><img src="https://i.pinimg.com/originals/59/2f/58/592f58603102186855b3d30bdecbafac.jpg" width="280px" height="280px"><h2 class="txorg">Gilceli Aranha</h2></span>
+  <span style="--i:6"><img src="https://i.pinimg.com/originals/8f/15/4d/8f154de38ee81432a6118a8b3fe3bb3d.jpg" width="280px" height="280px"><h2 class="txorg">Núbia Moreira</h2></span>
+  <span style="--i:7"><img src="https://i.pinimg.com/originals/6a/92/bf/6a92bf68ecc758589460411433feacfb.jpg" width="280px" height="280px"><h2 class="txorg">Adriano Pires</h2></span>
+  <span style="--i:8"><img src="https://i.pinimg.com/originals/57/85/95/5785951a99af293039f458c1850a81be.jpg" width="280px" height="280px"><h2 class="txorg">Giovana Moreira</h2></span>
+</div>
+</section>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxx  organização gcal xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<br><br><center><h2 class="titleText"> Patrocinadores da G<span class="A1">C</span><span class="A2">A</span><span class="A3">L</span></h2></center>
+<section class="patro">
+    <img src="https://i.pinimg.com/originals/41/a3/fc/41a3fc1972d3d33ea0bd6b2dd5cec90d.jpg" class="ft" width="150px" height="150px"> &nbsp;&nbsp;
+    <img src="https://i.pinimg.com/originals/bd/81/15/bd8115ecf536feee32d470a2e71c09e8.jpg" class="ft" width="150px" height="150px"> &nbsp;&nbsp;
+    <img src="https://i.pinimg.com/originals/8f/3c/4a/8f3c4aceb2824aaea1f03df982d01a5b.jpg" class="ft" width="150px" height="150px"> &nbsp;&nbsp;
+    <img src="https://i.pinimg.com/originals/3c/36/19/3c3619fdf4ed31562789bd010c539fe1.jpg" class="ft" width="150px" height="150px"> &nbsp;&nbsp;
+    <img src="https://i.pinimg.com/originals/90/35/ba/9035ba26f63d40fed9e5f6b1e07e1bd1.jpg" class="ft" width="150px" height="150px"> &nbsp;&nbsp;
+    <img src="https://i.pinimg.com/originals/e7/b4/63/e7b463bffc2b6b52b29935048a17f550.jpg" class="ft" width="150px" height="150px"> &nbsp;&nbsp;
+    <img src="https://i.pinimg.com/originals/f9/43/40/f94340e449ef152d8a23cfcd2682cbe2.jpg" class="ft" width="150px" height="150px"> <br><br><br><br><br><br><br>
+    <img src="https://i.pinimg.com/originals/d7/ef/df/d7efdfa0387ad3c55ea9c03fe3b2c291.jpg" class="ft" width="150px" height="150px"> &nbsp;&nbsp;
+    <img src="https://i.pinimg.com/originals/9f/b6/c8/9fb6c8268ab85984a64ffdcc2fe041d2.jpg" class="ft" width="150px" height="150px"> &nbsp;&nbsp;
+    <img src="https://i.pinimg.com/originals/b7/30/c6/b730c6b1840d80e5e3c6bb7f8889c25c.jpg" class="ft" width="150px" height="150px"> &nbsp;&nbsp;
+    <img src="https://i.pinimg.com/originals/86/34/cb/8634cbb0247bf7be88f8c85f8b601fb4.jpg" class="ft" width="150px" height="150px"> &nbsp;&nbsp;
+    <img src="https://i.pinimg.com/originals/0f/61/07/0f6107cd905956854317ab6c3396f1cd.jpg" class="ft" width="150px" height="150px"> &nbsp;&nbsp;
+    <img src="https://i.pinimg.com/originals/f3/9f/58/f39f58015382a54bebcc4aef3c4ccabe.jpg" class="ft" width="150px" height="150px"> &nbsp;&nbsp;
+    <img src="https://i.pinimg.com/originals/76/09/d7/7609d71ff9fb8514f26bf26c93322d50.png" class="ft" width="150px" height="150px"> &nbsp;&nbsp;
+</section>
+<br><br><center><h2 class="txt"> Quer fazer parte do time de Patrocínio?<br> Acesse o Link e faça a Sua Doação</span></h2>
+  <a href="https://www.vakinha.com.br/vaquinha/construindo-um-sonho-reforma-da-igreja-catolica" target="_blank" class="btn"><b>Doações</b></a></center>
+<br> <br>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<section class="banner3">
+  <img src="https://i.pinimg.com/originals/48/e2/2d/48e22d3f3f08617b5465ba5074c9b6d9.jpg" class="fitBg">
+</section>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<section class="footer">
+
+<a href="Documentos\REGULAMENTO DA GINCANA VIRTUAL.pdf" download="Acme Documentation (ver. 2.0.1).pdf" target="_blank" class="btn"><b>Faça o download do Regulamento</b></a>
+<br><br>
+
+  <ul class="sci">
+    <li> <a href="https://www.facebook.com/gincana.aquiles.5" target="_blank"><img src="https://image.flaticon.com/icons/png/512/59/59439.png"></a> </li>
+    <li> <a href="https://www.youtube.com/channel/UCJfCiWUdlXoB8HNtJHqL1NA" target="_blank" ><img src="https://image.flaticon.com/icons/png/512/48/48968.png"></a> </li>
+    <li> <a href="https://www.instagram.com/gcal_aquileslisboa/" target="_blank" ><img src="https://i2.wp.com/www.multarte.com.br/wp-content/uploads/2019/03/logo-instagram-png-sem-fundo16.png?fit=696%2C696&ssl=1"></a> </li>
+  </ul>
+  <h4 class="copyrightText"> copyright &copy; 2020 <a href="#"> GCAL </a>. Todos os Direitos Reservados.</h4><br>
+  <img src="https://i.pinimg.com/originals/58/ee/71/58ee71b7dca11d7816bbe2db6c88c7a0.png" class="rml" width="170px" height="50px">
+</section>
+  </body>
+</html>
